@@ -1,0 +1,14 @@
+module xor_design(f,a,b);
+  parameter n=16;
+  input [n-1:0]a,b;
+  output [n-1:0]f;
+  genvar p;
+  generate for(p=0;p<n;p=p+1)
+      begin:xorlp
+        xor xg(f[p],a[p],b[p]);
+      end
+    endgenerate
+  
+    endmodule
+        
+      
