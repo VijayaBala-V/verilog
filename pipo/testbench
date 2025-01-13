@@ -1,0 +1,36 @@
+module tb;
+  reg clk, clr;
+  reg [3:0] in;
+  wire [3:0] out;
+
+  
+  pipo dut (
+    .clk(clk),
+    .clr(clr),
+    .in(in),
+    .out(out)
+  );
+
+  
+  initial begin
+    clk = 1'b0;
+    forever #5 clk = ~clk; 
+  end
+
+  initial begin
+    $monitor("time=%0t clr=%b in=%0b out=%0b", $time, clr, in, out);
+    clr = 1; #10;
+    clr = 0; #10;
+    in = 4'b1101; #10;
+    in = 4'b1010; #10;
+    clr = 1; #10; 
+    clr = 0; #10;
+    $finish;
+  end
+
+ 
+  initial begin
+    $dumpfile("tb.vcd");
+    $dumpvars(0, tb);
+  end
+endmodule
