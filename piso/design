@@ -1,0 +1,18 @@
+module piso(input clk,clr,[3:0]in,output reg out);
+  reg [3:0]shift;
+  always @(posedge clk,posedge clr)
+    begin
+      if(clr)
+        shift=4'b0;
+      else begin
+        if(shift==4'b0)
+          shift<=in;
+        else
+          shift<={shift[2:0],1'b0};
+      end
+    end
+  always@ (*)
+    begin
+    out<=shift[3];
+    end
+endmodule
