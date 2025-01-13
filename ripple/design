@@ -1,0 +1,23 @@
+module ripple #(parameter n = 8) (
+    input [n-1:0] a, 
+    input [n-1:0] b, 
+    input carry_in, 
+    output [n-1:0] sum, 
+    output carry_out
+);
+  wire [n:0] carry;
+  assign carry[0] = carry_in;
+  assign carry_out = carry[n];
+
+  genvar i;
+  generate 
+    for (i = 0; i < n; i = i + 1) begin : fa_block
+      wire t1, t2, t3;
+      xor g1(t1, a[i], b[i]);
+      xor g2(sum[i], t1, carry[i]);
+      and g3(t2, a[i], b[i]);
+      and g4(t3, t1, carry[i]);
+      or g5(carry[i+1], t2, t3);
+    end
+  endgenerate
+endmodule
