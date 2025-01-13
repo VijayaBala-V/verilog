@@ -1,0 +1,10 @@
+# KERNEL: time=0 input=0 | output=1111110
+# KERNEL: time=10 input=1 | output=110000
+# KERNEL: time=20 input=10 | output=1101101
+# KERNEL: time=30 input=11 | output=1111001
+# KERNEL: time=40 input=100 | output=110011
+# KERNEL: time=50 input=101 | output=1011011
+# KERNEL: time=60 input=110 | output=1011111
+# KERNEL: time=70 input=111 | output=1110000
+# KERNEL: time=80 input=1000 | output=1111111
+# KERNEL: time=90 input=1001 | output=1111011
