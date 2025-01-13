@@ -1,0 +1,11 @@
+module pipo(input clk,input clr,input [3:0]in,output reg [3:0]out);
+  always @(posedge clk,posedge clr)
+  begin
+    if(clr)
+      out <= 4'b0000;
+    else
+        out <= in;
+  end
+endmodule
+        
+        
