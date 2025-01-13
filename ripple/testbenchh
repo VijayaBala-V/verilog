@@ -1,0 +1,30 @@
+module tb;
+  reg [7:0] a, b;
+  reg carry_in;
+  wire [7:0] sum;
+  wire carry_out;
+
+ 
+  ripple #(8) dut (
+    .a(a),
+    .b(b),
+    .carry_in(carry_in),
+    .sum(sum),
+    .carry_out(carry_out)
+  );
+
+  initial begin
+    $monitor("a=%0b b=%0b carry_in=%b | sum=%0b carry_out=%b", a, b, carry_in, sum, carry_out);
+    a = 8'b00000000; b = 8'b00000000; carry_in = 1'b0; #10;
+    a = 8'b00000001; b = 8'b00000001; carry_in = 1'b0; #10;
+    a = 8'b11111111; b = 8'b00000001; carry_in = 1'b1; #10;
+    a = 8'b10101010; b = 8'b01010101; carry_in = 1'b0; #10;
+    a = 8'b11110000; b = 8'b00001111; carry_in = 1'b1; #10;
+    $finish;
+  end
+
+  initial begin
+    $dumpfile("tb.vcd");
+    $dumpvars(0, tb);
+  end
+endmodule
