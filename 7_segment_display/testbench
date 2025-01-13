@@ -1,0 +1,18 @@
+module tb;
+  reg [3:0]in;
+  wire [6:0]out;
+  integer i=0;
+  segment_7 dut(.in(in),.out(out));
+  initial begin
+    $monitor("time=%0t input=%0b | output=%0b",$time,in,out); 
+    for(i=0;i<10;i++)
+      begin
+        in=i;#10;
+      end
+  end 
+  initial begin
+    $dumpfile("tb.vcd");
+    $dumpvars();
+  end
+endmodule
+  
