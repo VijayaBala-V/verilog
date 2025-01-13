@@ -1,0 +1,7 @@
+# KERNEL: time=0 serial_in=x serial_out=x
+# KERNEL: time=5 serial_in=x serial_out=0
+# KERNEL: time=10 serial_in=1 serial_out=0
+# KERNEL: time=30 serial_in=0 serial_out=0
+# KERNEL: time=35 serial_in=0 serial_out=x
+# KERNEL: time=40 serial_in=1 serial_out=x
+# KERNEL: time=45 serial_in=1 serial_out=1

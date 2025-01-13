@@ -1,0 +1,23 @@
+module tb;
+  reg clk,clr,serial_in;
+  wire serial_out;
+  siso dut(.clk(clk),.clr(clr),.serial_in(serial_in),.serial_out(serial_out));
+  initial begin
+    clk=1'b0;
+    forever #5 clk=~clk;
+  end
+  initial begin
+    $monitor("time=%0t serial_in=%0b serial_out=%0b",$time,serial_in,serial_out);
+    clr=1;#5;
+    clr=0;#5;
+    serial_in=1;#10;
+    serial_in=1;#10;
+    serial_in=0;#10;
+    serial_in=1;#10;
+    $finish;
+  end
+  initial begin
+    $dumpfile("tb.vcd");
+    $dumpvars();
+  end
+endmodule
