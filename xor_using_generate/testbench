@@ -1,0 +1,15 @@
+module tb;
+  reg [15:0]a,b;
+  wire [15:0]f;
+  xor_design dut(.f(f),.a(a),.b(b));
+  initial begin
+    $monitor("a=%b b=%b output=%b",a,b,f);
+    a=16'haabd;b=16'h6782;#10;
+    a=16'hadc3;b=16'h5477;#10;
+  end
+  initial begin
+    $dumpfile("tb.vcd");
+    $dumpvars();
+  end
+endmodule
+    
