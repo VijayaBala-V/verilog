@@ -1,0 +1,15 @@
+# KERNEL: time=0 in=0 gray=0
+# KERNEL: time=10 in=1 gray=1
+# KERNEL: time=20 in=10 gray=11
+# KERNEL: time=30 in=11 gray=10
+# KERNEL: time=40 in=100 gray=110
+# KERNEL: time=50 in=101 gray=111
+# KERNEL: time=60 in=110 gray=101
+# KERNEL: time=70 in=111 gray=100
+# KERNEL: time=80 in=1000 gray=1100
+# KERNEL: time=90 in=1001 gray=1101
+# KERNEL: time=100 in=1010 gray=1111
+# KERNEL: time=110 in=1011 gray=1110
+# KERNEL: time=120 in=1100 gray=1010
+# KERNEL: time=130 in=1101 gray=1011
+# KERNEL: time=140 in=1110 gray=1001
