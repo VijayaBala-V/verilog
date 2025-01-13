@@ -1,0 +1,6 @@
+# KERNEL: time=0 in=0 out=x
+# KERNEL: time=5 in=0 out=0
+# KERNEL: time=25 in=1101 out=1
+# KERNEL: time=45 in=1101 out=0
+# KERNEL: time=55 in=1101 out=1
+# KERNEL: time=65 in=1101 out=0
