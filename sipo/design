@@ -1,0 +1,14 @@
+module sipo(input clk,clr,in,output reg [3:0]out);
+  reg [3:0]serial;
+  always @(posedge clk,posedge clr)
+    begin
+      if(clr)
+        serial=4'b0000;
+      else
+        begin
+          serial={serial[2:0],in};
+          out=serial;
+        end
+    end
+endmodule
+          
