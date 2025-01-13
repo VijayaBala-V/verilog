@@ -1,0 +1,9 @@
+# KERNEL: time=0 input=x | output=xxxx
+# KERNEL: time=5 input=x | output=x
+# KERNEL: time=10 input=1 | output=x
+# KERNEL: time=15 input=1 | output=x1
+# KERNEL: time=25 input=1 | output=x11
+# KERNEL: time=30 input=0 | output=x11
+# KERNEL: time=35 input=0 | output=x110
+# KERNEL: time=40 input=1 | output=x110
+# KERNEL: time=45 input=1 | output=1101
