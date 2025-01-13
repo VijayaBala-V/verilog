@@ -1,0 +1,3 @@
+# KERNEL: time=40 clr=1 in=1010 out=0
+# KERNEL: time=50 clr=0 in=1010 out=0
+# KERNEL: time=55 clr=0 in=1010 out=1010
