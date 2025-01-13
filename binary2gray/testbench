@@ -1,0 +1,21 @@
+module tb;
+  reg [3:0]in;
+  wire [3:0]gray;
+  integer i;
+  binary_gray dut(.in(in),.gray(gray));
+  initial begin
+    $monitor("time=%0t in=%0b gray=%0b",$time,in,gray);
+    for(i=0;i<15;i++)
+      begin
+        in=i;#10;
+      end
+  end
+  initial begin
+    $dumpfile("tb.vcd");
+    $dumpvars();
+  end
+endmodule
+    
+      
+    
+    
