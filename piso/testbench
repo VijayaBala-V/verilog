@@ -1,0 +1,23 @@
+module tb;
+  reg clk,clr;
+  reg [3:0]in;
+  wire out;
+  piso dut(.clk(clk),.clr(clr),.in(in),.out(out));
+  initial begin
+    clk=1'b0;
+    forever #5 clk=~clk;
+  end
+  initial begin
+    $monitor("time=%0t in=%0b out=%0b",$time,in,out);
+    in=4'b0000;#5;
+    clr=1;#10;
+    clr=0;#10;
+    in=4'b1101;#50;
+ $finish; 
+  end
+  initial begin
+    $dumpfile("tb.vcd");
+    $dumpvars();
+  end
+endmodule
+    
