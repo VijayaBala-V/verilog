@@ -1,0 +1,3 @@
+module binary_gray(input [3:0]in,output [3:0] gray);
+  assign gray=in^(in>>1);
+endmodule
