@@ -1,0 +1,25 @@
+ KERNEL: 	                   0	1	xx	0
+# KERNEL: 	                  50	0	xx	0
+# KERNEL: 	                 180	0	01	0
+# KERNEL: 	                 220	0	00	0
+# KERNEL: 	                 300	0	10	1
+# KERNEL: 	                 320	0	10	0
+# KERNEL: 	                 340	0	00	0
+# KERNEL: 	                 520	0	01	0
+# KERNEL: 	                 560	0	00	0
+# KERNEL: 	                 640	0	01	1
+# KERNEL: 	                 660	0	01	0
+# KERNEL: 	                 680	0	00	0
+# KERNEL: 	                 760	0	01	0
+# KERNEL: 	                 800	0	00	0
+# KERNEL: 	                 980	0	10	1
+# KERNEL: 	                1000	0	10	0
+# KERNEL: 	                1020	0	00	0
+# KERNEL: 	                1100	0	10	0
+# KERNEL: 	                1120	0	10	1
+# KERNEL: 	                1140	0	00	0
+# KERNEL: 	                1320	0	10	0
+# KERNEL: 	                1340	0	10	1
+# KERNEL: 	                1360	0	00	0
+# KERNEL: 	                1440	0	01	0
+# KERNEL: 	                1480	0	00	
