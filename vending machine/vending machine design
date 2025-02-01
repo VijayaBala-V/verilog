@@ -1,0 +1,82 @@
+module vending(clk, rst, coin, news);
+  input clk, rst;
+  input [1:0] coin;
+  output wire news;
+
+  reg [1:0] ps;
+  reg [1:0] ns;
+
+  parameter s0 = 2'b00;
+  parameter s5 = 2'b01;
+  parameter s10 = 2'b10;
+  parameter s15 = 2'b11;
+
+  function [2:0] fsm;
+    input [1:0] fsm_coin;
+    input [1:0] fsm_pres;
+    reg fsm_news;
+    reg [1:0] fsm_next;
+    begin
+      case (fsm_pres)
+        s0: begin
+          if (fsm_coin == 2'b10) begin
+            fsm_news = 1'b0;
+            fsm_next = s10;
+          end
+          else if (fsm_coin == 2'b01) begin
+            fsm_news = 1'b0;
+            fsm_next = s5;
+          end
+          else begin
+            fsm_news = 1'b0;
+            fsm_next = s0;
+          end
+        end
+        s5: begin
+          if (fsm_coin == 2'b10) begin
+            fsm_news = 1'b0;
+            fsm_next = s15;
+          end
+          else if (fsm_coin == 2'b01) begin
+            fsm_news = 1'b0;
+            fsm_next = s10;
+          end
+          else begin
+            fsm_news = 1'b0;
+            fsm_next = s5;
+          end
+        end
+        s10: begin
+          if (fsm_coin == 2'b10) begin
+            fsm_news = 1'b0;
+            fsm_next = s15;
+          end
+          else if (fsm_coin == 2'b01) begin
+            fsm_news = 1'b0;
+            fsm_next = s15;
+          end
+          else begin
+            fsm_news = 1'b0;
+            fsm_next = s10;
+          end
+        end
+        s15: begin
+          fsm_news = 1'b1;
+          fsm_next = s0;
+        end
+      endcase
+      fsm = {fsm_news, fsm_next};
+    end
+  endfunction
+
+  assign {news, ns} = fsm(coin, ps);
+
+  always @(posedge clk or posedge rst) begin
+    if (rst) begin
+      ps <= s0;
+    end
+    else begin
+      ps <= ns;
+    end
+  end
+endmodule
